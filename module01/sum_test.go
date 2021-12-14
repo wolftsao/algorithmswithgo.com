@@ -35,3 +35,15 @@ func TestSum(t *testing.T) {
 		})
 	}
 }
+
+func BenchmarkSum(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		_ = Sum([]int{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16})
+	}
+}
+
+func BenchmarkRecurSum(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		_ = RecurSum([]int{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16})
+	}
+}
