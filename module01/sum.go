@@ -17,5 +17,5 @@ func RecurSum(numbers []int) int {
 		return 0
 	}
 
-	return numbers[0] + Sum(numbers[1:])
+	return numbers[0] + RecurSum(numbers[1:])
 }
