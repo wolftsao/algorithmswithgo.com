@@ -34,6 +34,15 @@ package module01
 //    difference. Eg prefer the values 2, 2 over 1, 3 over 0, 4
 //    for the sum of 4.
 //
+
 func FindTwoThatSum(numbers []int, sum int) (int, int) {
-	return 0, 0
+	for i, vo := range numbers {
+		for j := i + 1; j < len(numbers); j++ {
+			if vo+numbers[j] == sum {
+				return i, j
+			}
+		}
+	}
+
+	return -1, -1
 }
