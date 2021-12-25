@@ -1,11 +1,28 @@
 package module02
 
-import "sort"
+import (
+	"sort"
+)
 
 // BubbleSortInt will sort a list of integers using the bubble sort algorithm.
 //
 // Big O: O(N^2), where N is the size of the list
 func BubbleSortInt(list []int) {
+	var swap bool
+	for n := len(list) - 1; n > 0; n-- {
+		swap = false
+
+		for i := 0; i < n; i++ {
+			if list[i] > list[i+1] {
+				list[i], list[i+1] = list[i+1], list[i]
+				swap = true
+			}
+		}
+
+		if !swap {
+			return
+		}
+	}
 }
 
 // BubbleSortString is a bubble sort for string slices. Try implementing it for
